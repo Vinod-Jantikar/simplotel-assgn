@@ -1,60 +1,111 @@
 body {
     background-image: linear-gradient(to right, pink, yellow);
-
-}
-.flex-box {
+  }
+  .flex-box {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10%;
-}
-
-li {
+  }
+  
+  li {
     list-style: none;
-}
-
-.bg-img {
+    cursor: pointer;
+  }
+  
+  .bg-img {
     height: 600px;
     width: 100%;
-    background-image: url('./assets/img1.jpg');
+    background-image: url("./assets/img1.jpg");
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-size: 100% 90%;
     border: 1px solid black;
-}
-
-.shadow-box {
+  }
+  
+  .shadow-box {
     width: 35%;
     margin: 13% 0 0 5%;
     background-color: rgb(239, 120, 138);
     opacity: 0.6;
     color: white;
     padding: 2%;
-}
-
-.heading {
+  }
+  
+  .heading {
     text-align: center;
     color: white;
-}
-
-.grid-box {
+  }
+  
+  .grid-box {
     display: grid;
     grid-template-columns: 28% 28% 28%;
     justify-content: center;
     align-items: center;
     gap: 5%;
-}
-
-.image-card {
+  }
+  
+  .image-card {
     background-color: white;
     padding: 5%;
     border-top-right-radius: 54px;
     border-bottom-left-radius: 54px;
     text-align: center;
     height: 70%;
-}
-.image-card img{
+  }
+  .image-card img {
     width: 100%;
     height: 70%;
     border-top-right-radius: 54px;
-}
+  }
+  
+  .menu-btn {
+    background-color: transparent;
+    padding: 10px 20px;
+    border: 1px solid #ffffff;
+    display: none;
+  }
+  
+  .navbar {
+    padding: 20px 0;
+    position: relative;
+  }
+  
+  @media only screen and (max-width: 968px) {
+    .grid-box {
+      grid-template-columns: 45% 45%;
+      gap: 50px;
+    }
+    .menu-btn {
+      display: block;
+    }
+    .flex-box {
+      display: none;
+    }
+    .flex-box:hover,
+    .menu-btn:hover + .flex-box {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 100;
+      padding: 15px 25px;
+      margin-top: 0px;
+      background-image: linear-gradient(to right, rgb(238, 131, 148), yellow);
+      color: #ffffff;
+    }
+  }
+  
+  @media only screen and (max-width: 568px) {
+    .grid-box {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      padding-bottom: 80px;
+      margin-top: 50px;
+    }
+    .menu-btn {
+      display: block;
+    }
+  }
+  
